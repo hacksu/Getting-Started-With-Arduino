@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "Ian Rohrbacher",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot1",
+      "top": 33.8,
+      "left": -221.8,
+      "attrs": { "travelLength": "30" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "pot1:VCC", "esp:5V", "red", [ "h-19.2", "v124.8", "h254.21" ] ],
+    [ "esp:GND.1", "pot1:GND", "black", [ "h0" ] ],
+    [ "pot1:SIG", "esp:14", "orange", [ "v37.6", "h225.41" ] ]
+  ],
+  "dependencies": {}
+}
